@@ -8,5 +8,17 @@ Methods you will implement:
   - double calculateDailySalary()
 TIP: Start from your class diagram; add fields first, then implement the required methods. Don't forget to actually inherit from Employee.
 */
-public class DepartmentOfficer {
+public class DepartmentOfficer extends Employee{
+    protected double companyBonus;
+
+    public  DepartmentOfficer( double hourlySalary, double hoursWorked, double companyBonus){
+        super(hourlySalary,hoursWorked);
+        this.companyBonus = companyBonus;
+    }
+
+    @Override
+    public double calculateDailySalary() {
+        return super.calculateDailySalary() + companyBonus;
+    }
+
 }
