@@ -62,7 +62,7 @@ public class Booking {
      * @param date date to search for room
      * @return ID of cheapest hotel, -1 for nothing available
      */
-    public int findCheapestHotel(long date) {
+    public int findCheapestHotel(long startDate, long endDate) {
         double cheapestPrice = Double.MAX_VALUE;
         int cheapestHotelID = -1;
 
@@ -70,14 +70,12 @@ public class Booking {
             int e_hotelID = entry.getKey();
             Hotel e_hotel = entry.getValue();
 
-            if (e_hotel.checkAvailability(date) != -1 &&
+            if (e_hotel.checkAvailability(startDate, endDate) != -1 &&
                     e_hotel.getPricePerRoom() < cheapestPrice) {
                 cheapestHotelID = e_hotelID;
                 cheapestPrice = e_hotel.getPricePerRoom();
-
             }
         }
-
         return cheapestHotelID;
     }
 
@@ -105,11 +103,15 @@ public class Booking {
      * @return 0 for OK, -1 for error
      */
     public int bookRoomInHotel(long startDate, long endDate, int hotelID) {
-        /*
-            TODO: Check availability across [startDate, endDate], then book the returned room for the full range; propagate hotel.bookRoom result
-            TIP: Read Hotel.java. Implement 'checkAvailability(long startDate, long endDate)'
-        */
-        return -2;
+        Hotel hotel = hotels.get(hotelID);
+        if (hotel == null) {
+            return -1;
+        }
+        int roomID = hotel.checkAvailability(startDate, endDate);
+        if (roomID == -1) {
+            return -1;
+        }
+        return hotel.bookRoom(startDate, endDate, roomID);
     }
 
 
@@ -122,10 +124,11 @@ public class Booking {
      * @return ID of the booked hotel on success; -1 if no availability or on error
      */
     public int bookRoomInCheapestHotel(long startDate, long endDate) {
-        /*
-            TODO: Find the cheapest hotel with availability across [startDate, endDate]; then book the entire range in that hotel and return its ID
-            TIP: Read Hotel.java. Implement 'checkAvailability(long startDate, long endDate)'
-        */
-        return -2;
+        int hotelID = findCheapestHotel(startDate, endDate);
+        if (hotelID == -1) {
+            return -1;
+        }
+        int result = bookRoomInHotel(startDate, endDate, hotelID);
+        return (result == 0) ? hotelID : -1;
     }
 }

@@ -8,6 +8,7 @@
 
 - Draw **Use Case** and **Sequence** diagrams for a small system.
 - Translate between diagrams and code.
+- Work with a simple Maven/IntelliJ Java project.
 - _optional: testing_
 
 ## Context
@@ -15,7 +16,6 @@
 You’ll model and implement parts of a **simple hotel booking system** with three features:
 
 1) **Find cheapest hotel** for a given **date range** (`startDate`, `endDate`).
-2) **Book** a room in a **specific hotel** (by `hotelID`) for a given **date**.
 2) **Book** a room in a **specific hotel** (by `hotelID`) for a given **date range**.
 3) **Book** a room in the **cheapest hotel** for a given **date range**.
 
@@ -23,12 +23,12 @@ You’ll model and implement parts of a **simple hotel booking system** with thr
 
 By the end of this lab you should:
 
-1. **Implement the code** for booking a room given the sequence diagram
+1. **Draw a Use Case diagram** of all the features.
 2. **Create a full Sequence diagram** given the code for finding the cheapest hotel
-3. Provide **the code** and the **sequence diagram** for:
-   4. Booking a room in a hotel for a range of dates
-   5. Booking a room in the cheapest hotel for a range of dates
-6. **Draw a Use Case diagram** of all the features.
+3. **Implement the code** for booking a room given the sequence diagram
+4. Provide both **the code** and **the Sequence Diagrams** for:
+    5. Booking a room in a hotel for a range of dates
+    6. Booking a room in the cheapest hotel for a range of dates
 
 ## Where to Code
 
@@ -40,7 +40,6 @@ and marked with `TODO` comments. Use one of these approaches to locate them:
 
 **Target methods**:
 
-- `bookRoomInHotel(long date, int hotelID)`
 - `findCheapestHotel(long startDate, long endDate)`
 - `bookRoomInHotel(long startDate, long endDate, int hotelID)`
 - `bookRoomInCheapestHotel(long startDate, long endDate)`

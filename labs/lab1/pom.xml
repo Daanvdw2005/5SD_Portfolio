@@ -8,6 +8,6 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>lab1</artifactId>
-    <name>Lab 1 Student</name>
+    <name>Lab 1 Solution</name>
     <packaging>jar</packaging>
 </project>
