@@ -15,6 +15,15 @@ public class Main {
             TODO: Create instances of each role and pass them (as Employee) to printWage(...) to verify polymorphism.
             TIP: Upcast to Employee and keep fields private/protected as appropriate.
         */
+        Employee employee = new Employee(20.0, 8.0);
+        Employee officer = new DepartmentOfficer(25.0, 8.0, 50.0);
+        Employee programmer = new Programmer(30.0, 8.0, 10.0, 5.0);
+        Employee customerService = new CustomerService(18.0, 8.0, 5.0, 12.0);
+
+        printWage("Standard employee", employee);
+        printWage("Department Officer", officer);
+        printWage("Programmer", programmer);
+        printWage("Customer Service", customerService);
         return;
     }
 
@@ -23,6 +32,6 @@ public class Main {
             TODO: Once Employee.calculateDailySalary exists, print the salary for each employee.
             TIP: Use: System.out.println(\"Employee \" + name + \": salary = \" + e.calculateDailySalary());
         */
-        return;
+        System.out.println("Employee " + name + ": salary = " + e.calculateDailySalary());
     }
 }

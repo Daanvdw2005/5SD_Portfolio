@@ -18,7 +18,7 @@ public class Programmer extends Employee {
     public Programmer(double hourlySalary, double hoursWorked, double bonusPerBug, double NumberOfBugs){
         super(hourlySalary,hoursWorked);
         this.bonusPerBug = bonusPerBug;
-        this.numberOfBugs = bonusPerBug;
+        this.numberOfBugs = NumberOfBugs;
     }
 
     @Override

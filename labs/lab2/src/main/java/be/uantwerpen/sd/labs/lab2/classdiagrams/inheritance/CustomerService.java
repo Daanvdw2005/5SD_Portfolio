@@ -16,8 +16,8 @@ public class CustomerService extends Employee {
 
     public CustomerService(double hourlySalary, double hoursWorked, double bonusPerCustomer , double numberOfCustomers) {
         super(hourlySalary, hoursWorked);
-
-
+        this.bonusPerCustomer = bonusPerCustomer;
+        this.numberOfCustomers = numberOfCustomers;
     }
 
     @Override
