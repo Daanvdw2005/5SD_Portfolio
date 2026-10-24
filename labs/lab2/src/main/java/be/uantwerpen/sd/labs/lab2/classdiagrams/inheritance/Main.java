@@ -24,7 +24,7 @@ public class Main {
         printWage("Department Officer", officer);
         printWage("Programmer", programmer);
         printWage("Customer Service", customerService);
-        return;
+
     }
 
     public void printWage(String name, Employee e) {

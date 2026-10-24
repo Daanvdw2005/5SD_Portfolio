@@ -8,4 +8,6 @@ Methods you will implement:
 TIP: Both methods should be parameterless and public. Other device classes will implement this.
 */
 public interface VolumeDevice {
+    void volumeUp();
+    void volumeDown();
 }

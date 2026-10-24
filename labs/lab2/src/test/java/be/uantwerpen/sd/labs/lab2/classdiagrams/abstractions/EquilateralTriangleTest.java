@@ -15,7 +15,7 @@ class EquilateralTriangleTest {
     @Test
     void calcArea() {
         EquilateralTriangle triangle = new EquilateralTriangle(6.0, "TestTriangle");
-        double expected = 6*6/2;
+        double expected = (double) (6 * 6) /2;
         assertEquals(expected, triangle.calcArea(), 0.001);
     }
 }

@@ -9,5 +9,31 @@ Methods you will implement:
   - void volumeDown()
 TIP: Keep an internal volume (e.g., int) and print state changes in volumeUp()/volumeDown().
 */
-class TV {
+public class TV implements VolumeDevice {
+
+    private int volume;
+
+    public TV(int initialVolume) {
+        this.volume = initialVolume;
+    }
+
+    public TV() {
+        this(10);
+    }
+
+    @Override
+    public void volumeUp() {
+        volume++;
+    }
+
+    @Override
+    public void volumeDown() {
+        if (volume > 0) {
+            volume--;
+        }
+    }
+
+    public int getVolume() {
+        return volume;
+    }
 }
