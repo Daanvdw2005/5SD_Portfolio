@@ -1,7 +1,4 @@
 package be.uantwerpen.sd.labs.lab2.classdiagrams.inheritance;
-
-import be.uantwerpen.sd.labs.lab2.classdiagrams.relations.Program;
-
 /*
 TODO: Implement Programmer according to the UML Diagram.
 Fields you will need:
