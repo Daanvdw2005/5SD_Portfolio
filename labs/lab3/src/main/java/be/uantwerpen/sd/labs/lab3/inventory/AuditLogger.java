@@ -10,5 +10,11 @@ Methods you will implement:
   - void propertyChange(PropertyChangeEvent evt)
 TIP: Check for event 'stockChanged'. Don't forget to implement the correct Class. In your message print at least `AUDIT:` and the new value.
 */
-public class AuditLogger {
+public class AuditLogger implements PropertyChangeListener{
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        if ("stockChanged".equals(evt.getPropertyName())) {
+            System.out.println("AUDIT: new quantity " + evt.getNewValue());
+        }
+    }
 }

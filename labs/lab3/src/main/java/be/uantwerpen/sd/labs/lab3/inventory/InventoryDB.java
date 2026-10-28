@@ -13,15 +13,25 @@ Methods you will implement:
   - void setStock(String sku, int newQty)
 TIP: Use private static volatile INSTANCE; implement double‑checked locking in getInstance(); fire 'stockChanged' with old and new stock.
 */
-public class InventoryDB {
+public class InventoryDB extends Database {
     private final Map<String, Integer> stock = new ConcurrentHashMap<>(); // sku -> qty
+    private static volatile InventoryDB INSTANCE;
+
+    private InventoryDB() { }
 
     public static InventoryDB getInstance() {
         /*
             TODO: Return the Singleton instance using double‑checked locking.
             TIP: Check null before and inside a synchronized block.
         */
-        return null;
+        if (INSTANCE == null) {
+            synchronized (InventoryDB.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new InventoryDB();
+                }
+            }
+        }
+        return INSTANCE;
     }
 
     public void setStock(String sku, int newQty) {
@@ -29,7 +39,9 @@ public class InventoryDB {
             TODO: Set stock for a sku and notify observers.
             TIP: Read old value, put new value, then notify with event name 'stockChanged'.
         */
-        return;
+        Integer previous = stock.put(sku, newQty);
+        int oldQty = (previous == null) ? 0 : previous;
+        notifyObservers("stockChanged", oldQty, newQty);
     }
 
     public int getStock(String sku) {

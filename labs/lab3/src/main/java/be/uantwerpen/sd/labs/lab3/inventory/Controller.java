@@ -9,6 +9,6 @@ public class Controller {
 
     public void adjust(String sku, int newQty) {
         // TODO: Adjust stock for an sku (Stock Keeping Unit).
-        return;
+        db.setStock(sku, newQty);
     }
 }
