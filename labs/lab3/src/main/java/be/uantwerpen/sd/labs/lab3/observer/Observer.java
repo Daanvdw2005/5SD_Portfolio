@@ -6,4 +6,5 @@ Methods you will implement:
   - void update(String event, Object payload)
 */
 public interface Observer {
+    void update(String event, Object payload);
 }
