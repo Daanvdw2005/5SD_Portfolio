@@ -7,13 +7,14 @@ Methods you will implement:
   - String commonName()
 TIP: Ensure you correctly implement/inherit the correct class.
 */
-public class Oak {
+public class Oak implements Plant{
+    @Override
     public String commonName() {
         /*
             TODO: Return the common name of this plant.
             TIP: E.g., \"Oak\" for Oak.
         */
-        return null;
+        return "Oak";
     }
 
     public double spacingMeters() {

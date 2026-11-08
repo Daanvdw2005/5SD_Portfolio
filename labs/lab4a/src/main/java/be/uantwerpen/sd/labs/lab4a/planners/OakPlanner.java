@@ -9,5 +9,9 @@ Methods you will implement:
   - Plant createPlant()
 TIP: This overrides the Factory Method. Instantiate and return the matching Plant.
 */
-public class OakPlanner {
+public class OakPlanner extends ReforestationPlanner {
+    @Override
+    protected Plant createPlant() {
+        return new Oak();
+    }
 }

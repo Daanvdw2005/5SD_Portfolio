@@ -8,13 +8,17 @@ TODO: Implement this class. This is the Abstract class for the factories to inhe
 Methods you will implement:
   - Plant createPlant()
 */
-public class ReforestationPlanner {
+
+public abstract class ReforestationPlanner {
+
+    protected abstract Plant createPlant();
+
     public PlantingPlan plan(double hectares, String soil) {
         /*
             TODO: Replace this instance creation by a factory method call.
             TIP: Now we assign 'null', but should assign a plant.
         */
-        Plant plant = null;
+        Plant plant = createPlant();
         double spacing = Math.max(plant.spacingMeters(), soilAdjustment(soil));
         int count = (int) Math.round((hectares * 10_000.0) / (spacing * spacing));
         String note = "Plant " + count + " × " + plant.info() + " on " + hectares + " ha (soil=" + soil + ")";
@@ -28,5 +32,7 @@ public class ReforestationPlanner {
         if (s.contains("wet") || s.contains("saline")) return 2.0;
         return 2.0;
     }
+
+
 }
 
