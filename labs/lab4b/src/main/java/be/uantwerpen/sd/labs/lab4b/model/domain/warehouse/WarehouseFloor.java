@@ -11,7 +11,8 @@ public final class WarehouseFloor extends GroundTile {
             TODO: Implement the isSolid method.
             TIP: The floor isn't solid.
         */
-        throw new UnsupportedOperationException("TODO: Implement the isSolid method.");
+//        throw new UnsupportedOperationException("TODO: Implement the isSolid method.");
+        return false;
     }
 
     @Override
@@ -20,7 +21,8 @@ public final class WarehouseFloor extends GroundTile {
             TODO: Implement the isSlippery method.
             TIP: The warehouse floor is not slippery.
         */
-        throw new UnsupportedOperationException("TODO: Implement the isSlippery method.");
+//        throw new UnsupportedOperationException("TODO: Implement the isSlippery method.");
+        return false;
     }
 
     @Override
@@ -29,7 +31,8 @@ public final class WarehouseFloor extends GroundTile {
             TODO: Implement the isTarget method.
             TIP: The floor is not a target.
         */
-        throw new UnsupportedOperationException("TODO: Implement the isTarget method.");
+//        throw new UnsupportedOperationException("TODO: Implement the isTarget method.");
+        return false;
     }
 
     @Override
