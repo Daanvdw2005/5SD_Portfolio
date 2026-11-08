@@ -8,5 +8,9 @@ Methods you will implement:
   - boolean countsForCoverage(Entity e)
 TIP: An entity counts as covered if it is not null and it is a box.
 */
-public final class WarehouseCoveragePolicy {
+public final class WarehouseCoveragePolicy extends CoveragePolicy{
+    @Override
+    public boolean countsForCoverage(Entity e){
+        return e != null && e.isBox();
+    }
 }

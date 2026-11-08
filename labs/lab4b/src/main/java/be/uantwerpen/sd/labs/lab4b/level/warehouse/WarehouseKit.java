@@ -38,7 +38,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct MovementStrategy.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehouseMovementStrategy();
     }
 
     public WorldGenerator generator() {
@@ -46,7 +46,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct Generator.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehouseWorldGenerator();
     }
 
     public Level level() {
@@ -54,7 +54,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct Level.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehouseLevel();
     }
 
     public GroundTile floor() {
@@ -62,7 +62,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct Floor.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehouseFloor();
     }
 
     public GroundTile wall() {
@@ -70,7 +70,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct Wall.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehouseWall();
     }
 
     public GroundTile target() {
@@ -78,7 +78,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct Target.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehouseTarget();
     }
 
     public Box box() {
@@ -86,7 +86,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct Box.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehouseBox();
     }
 
     public Player player() {
@@ -94,7 +94,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct Player.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehousePlayer();
     }
 
     public CoveragePolicy coverage() {
@@ -102,7 +102,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct CoveragePolicy.
             TIP: Ensure that this abstract factory creates Warehouse Objects.
         */
-        return null;
+        return new WarehouseCoveragePolicy();
     }
 
     public PaletteBuilder paletteBuilder() {
@@ -110,7 +110,7 @@ public final class WarehouseKit extends LevelKit {
             TODO: Return the correct PaletteBuilder.
             TIP: The warehouse theme can be obtained using 'AppConfig.get().themeWarehouse'
         */
-        return null;
+        return new ThemedPaletteBuilder(AppConfig.get().themeWarehouse);
     }
 
 }

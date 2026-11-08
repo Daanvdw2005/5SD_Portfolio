@@ -8,5 +8,9 @@ Methods you will implement:
   - boolean countsForCoverage(Entity e)
 TIP: An entity counts as covered if it is not null, and it is either a box or a player. Ensure you put your brackets correctly.
 */
-public final class GlacierCoveragePolicy {
+public final class GlacierCoveragePolicy extends CoveragePolicy {
+    @Override
+    public boolean countsForCoverage(Entity e) {
+        return e != null && (e.isBox() || e.isPlayer());
+    }
 }
