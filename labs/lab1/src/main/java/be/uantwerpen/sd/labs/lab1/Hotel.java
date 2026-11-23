@@ -85,10 +85,7 @@ public class Hotel {
      * @return int containing ID of first available room in range, -1 if no room is available
      */
     public int checkAvailability(long startDate, long endDate) {
-        /*
-            TODO: Check availability across [startDate, endDate].
-            TIP: Read this entire file first.
-        */
+
         int returnValue = -1; // default: nothing available
         if (isValidDateRange(startDate, endDate)) {
             for (Map.Entry<Integer, Room> e : this.rooms.entrySet()) {

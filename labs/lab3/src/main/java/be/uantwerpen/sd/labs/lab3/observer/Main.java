@@ -6,10 +6,6 @@ public class Main {
     }
 
     public void run() {
-        /*
-            TODO: Create an Auction, attach observers, then place a few bids to see notifications.
-            TIP: auction.addObserver(new ConsoleAnnouncer()); ...
-        */
         Auction auction = new Auction();
         MaxBidTracker tracker = new MaxBidTracker();
         auction.addObserver(new ConsoleAnnouncer());

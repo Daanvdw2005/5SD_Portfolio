@@ -34,82 +34,42 @@ public final class WarehouseKit extends LevelKit {
     }
 
     public MovementStrategy movement() {
-        /*
-            TODO: Return the correct MovementStrategy.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehouseMovementStrategy();
     }
 
     public WorldGenerator generator() {
-        /*
-            TODO: Return the correct Generator.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehouseWorldGenerator();
     }
 
     public Level level() {
-        /*
-            TODO: Return the correct Level.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehouseLevel();
     }
 
     public GroundTile floor() {
-        /*
-            TODO: Return the correct Floor.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehouseFloor();
     }
 
     public GroundTile wall() {
-        /*
-            TODO: Return the correct Wall.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehouseWall();
     }
 
     public GroundTile target() {
-        /*
-            TODO: Return the correct Target.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehouseTarget();
     }
 
     public Box box() {
-        /*
-            TODO: Return the correct Box.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehouseBox();
     }
 
     public Player player() {
-        /*
-            TODO: Return the correct Player.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehousePlayer();
     }
 
     public CoveragePolicy coverage() {
-        /*
-            TODO: Return the correct CoveragePolicy.
-            TIP: Ensure that this abstract factory creates Warehouse Objects.
-        */
         return new WarehouseCoveragePolicy();
     }
 
     public PaletteBuilder paletteBuilder() {
-        /*
-            TODO: Return the correct PaletteBuilder.
-            TIP: The warehouse theme can be obtained using 'AppConfig.get().themeWarehouse'
-        */
         return new ThemedPaletteBuilder(AppConfig.get().themeWarehouse);
     }
 

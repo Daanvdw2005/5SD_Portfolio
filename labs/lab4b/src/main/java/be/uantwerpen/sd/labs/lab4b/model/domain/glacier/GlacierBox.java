@@ -9,11 +9,6 @@ import javafx.scene.paint.Color;
 public final class GlacierBox extends Box {
     @Override
     public boolean slidesOn(GroundTile tile) {
-        /*
-            TODO: Implement the slidesOn method.
-            TIP: The provided tile object has a field defining whether or not the ground is slippery.
-        */
-//        throw new UnsupportedOperationException("TODO: Implement the slidesOn method.");
         return tile.isSlippery();
     }
 

@@ -3,21 +3,11 @@ package be.uantwerpen.sd.labs.lab4a;
 
 import java.util.Locale;
 
-/*
-TODO: Implement this class. This is the Abstract class for the factories to inherit from.
-Methods you will implement:
-  - Plant createPlant()
-*/
-
 public abstract class ReforestationPlanner {
 
     protected abstract Plant createPlant();
 
     public PlantingPlan plan(double hectares, String soil) {
-        /*
-            TODO: Replace this instance creation by a factory method call.
-            TIP: Now we assign 'null', but should assign a plant.
-        */
         Plant plant = createPlant();
         double spacing = Math.max(plant.spacingMeters(), soilAdjustment(soil));
         int count = (int) Math.round((hectares * 10_000.0) / (spacing * spacing));

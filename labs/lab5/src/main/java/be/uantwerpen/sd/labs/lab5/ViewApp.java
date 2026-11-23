@@ -17,24 +17,12 @@ public class ViewApp extends Application {
 
     @Override
     public void start(Stage stage) {
-        /*
-            TODO: Create the model instance.
-            TIP: Use the concrete DB implementation for this lab.
-        */
         Database model = new RegistrationDB();
 
-        /*
-            TODO: Inject the model into the controller.
-            TIP: Pass the model to the controller constructor.
-        */
         Controller controller = new RegistrationController(model);
 
         RegistrationView view = new RegistrationView();
 
-        /*
-            TODO: Wire the MVC triad: give the View its model + controller.
-            TIP: The View should observe the model and call the controller.
-        */
         View viewLogic = new View(model, controller, view);
 
         view.attachLogic(viewLogic);

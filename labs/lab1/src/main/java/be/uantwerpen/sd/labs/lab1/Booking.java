@@ -89,10 +89,6 @@ public class Booking {
      * @return 0 for OK, -1 for error
      */
     public int bookRoomInHotel(long date, int hotelID) {
-        /*
-            TODO: Check availability, then book the returned room; propagate hotel.bookRoom result
-            TIP: Read Hotel.java.
-        */
         Hotel hotel = hotels.get(hotelID);
         if (hotel == null) {
             return -1; // unknown hotel
@@ -113,10 +109,7 @@ public class Booking {
      * @return 0 for OK, -1 for error
      */
     public int bookRoomInHotel(long startDate, long endDate, int hotelID) {
-        /*
-            TODO: Check availability across [startDate, endDate], then book the returned room for the full range; propagate hotel.bookRoom result
-            TIP: Read Hotel.java. Implement 'checkAvailability(long startDate, long endDate)'
-        */
+
         Hotel hotel = hotels.get(hotelID);
         if (hotel == null) {
             return -1; // unknown hotel
@@ -138,10 +131,7 @@ public class Booking {
      * @return ID of the booked hotel on success; -1 if no availability or on error
      */
     public int bookRoomInCheapestHotel(long startDate, long endDate) {
-        /*
-            TODO: Find the cheapest hotel with availability across [startDate, endDate]; then book the entire range in that hotel and return its ID
-            TIP: Read Hotel.java. Implement 'checkAvailability(long startDate, long endDate)'
-        */
+
         double cheapestPrice = Double.MAX_VALUE;
         int cheapestHotelID = -1;
 

@@ -15,10 +15,7 @@ public class Main {
     }
 
     public void run() {
-        /*
-            TODO: Create multiple instances of each different Shape and pass them (as Shape) to printShape(...) to verify polymorphism.
-            TIP: Upcast to Shape and keep fields private/protected as appropriate.
-        */
+
         List<Shape> shapes = new ArrayList<>();
         shapes.add(new Circle(5, "Circle"));
         shapes.add(new Square(4, "Square"));
@@ -30,7 +27,6 @@ public class Main {
     }
 
     public void printShape(Shape shape) {
-        // TODO: Once Shape.calcCircumference and Shape.calcArea exists, print the Circumference and Area of each Shape.
 
         System.out.println("shape         : " + shape.name);
         System.out.println("circumference : " + shape.calcCircumference());

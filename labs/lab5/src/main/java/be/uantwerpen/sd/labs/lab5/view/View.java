@@ -19,10 +19,6 @@ public final class View implements PropertyChangeListener {
     private RegisterEntry currentEntrySelection;
 
     public View(Database model, Controller controller, RenderPort ui) {
-        /*
-            TODO: Implement the Constructor and register this View as a PropertyChangeListener on the model and refresh the UI.
-            TIP: Assign all input variables to the class fields. Execute the addPropertyChangeListener of the model. Call refreshAll() at the end.
-        */
         this.controller = controller;
         this.model = model;
         this.ui = ui;
@@ -31,10 +27,6 @@ public final class View implements PropertyChangeListener {
     }
 
     public void onAddPerson(String name, String function) {
-        /*
-            TODO: Implement the onAddPerson handler: call the controller to add the person and clear the UI on success; show an error on IllegalArgumentException.
-            TIP: Everything should be in one big try/catch block. In the catch statement, use `ui.showError(ex.getMessage());`.
-        */
         try {
             controller.addPerson(name,function);
             ui.clearInputs();
@@ -45,10 +37,6 @@ public final class View implements PropertyChangeListener {
     }
 
     public void onUpdatePerson(Employee updated) {
-        /*
-            TODO: Implement the onUpdatePerson handler: call the controller to update the person; show an error on IllegalArgumentException.
-            TIP: Everything should be in one big try/catch block. In the catch statement, use `ui.showError(ex.getMessage());`.
-        */
         try {
             controller.updatePerson(updated);
         }
@@ -59,10 +47,6 @@ public final class View implements PropertyChangeListener {
     }
 
     public void onDeleteSelected(Employee sel) {
-        /*
-            TODO: Implement the onDeleteSelected handler: call the controller to delete the selected person.
-            TIP: The selected employee should only be deleted if it is not null. There should NOT be a try/catch statement here, only one if statement.
-        */
         if(sel != null){
             controller.deletePerson(sel);
         }

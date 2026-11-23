@@ -9,11 +9,6 @@ import javafx.scene.paint.Color;
 public final class WarehouseBox extends Box {
     @Override
     public boolean slidesOn(GroundTile tile) {
-        /*
-            TODO: Implement the slidesOn method.
-            TIP: A box should never slide.
-        */
-//        throw new UnsupportedOperationException("TODO: Implement the slidesOn method.");
         return false;
     }
 

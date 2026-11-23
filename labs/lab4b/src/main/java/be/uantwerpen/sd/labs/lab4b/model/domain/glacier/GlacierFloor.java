@@ -7,31 +7,16 @@ import javafx.scene.canvas.GraphicsContext;
 public final class GlacierFloor extends GroundTile {
     @Override
     public boolean isSolid() {
-        /*
-            TODO: Implement the isSolid method.
-            TIP: The floor isn't solid.
-        */
-//        throw new UnsupportedOperationException("TODO: Implement the isSolid method.");
         return false;
     }
 
     @Override
     public boolean isSlippery() {
-        /*
-            TODO: Implement the isSlippery method.
-            TIP: The icy floor is slippery.
-        */
-//        throw new UnsupportedOperationException("TODO: Implement the isSlippery method.");
         return true;
     }
 
     @Override
     public boolean isTarget() {
-        /*
-            TODO: Implement the isTarget method.
-            TIP: The floor is not a target.
-        */
-//        throw new UnsupportedOperationException("TODO: Implement the isTarget method.");
         return false;
     }
 

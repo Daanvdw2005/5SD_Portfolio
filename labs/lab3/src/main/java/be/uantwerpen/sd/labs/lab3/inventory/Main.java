@@ -6,10 +6,6 @@ public class Main {
     }
 
     public void run() {
-        /*
-            TODO: Obtain the thread‑safe Singleton DB, register listeners, and adjust stock to see events.
-            TIP: Use two events, one where the quantity is below the threshold to reorder.
-        */
         InventoryDB db = InventoryDB.getInstance();
         db.addListener(new AuditLogger());
         db.addListener(new ReorderService(3));

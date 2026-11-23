@@ -4,18 +4,6 @@ import javafx.scene.paint.Color;
 
 import java.util.Map;
 
-/*
-TODO: Implement the concrete builder.
-Methods you will implement:
-  - void buildBackground()
-  - void buildFloor()
-  - void buildWall()
-  - void buildTarget()
-  - void buildPlayer()
-  - void buildBox()
-  - Palette build()
-TIP: You can get the correct color from the theme by using c(theme.get(string)). Look at the bottom of lab4b/src/main/resources/config.yaml for specific terminology [e.g. c(theme.get(background))]
-*/
 public final class ThemedPaletteBuilder extends PaletteBuilder {
     private Color background, floor, wall, target, player, box;
     private final Map<String, String> theme;

@@ -8,7 +8,6 @@ public class Controller {
     }
 
     public void adjust(String sku, int newQty) {
-        // TODO: Adjust stock for an sku (Stock Keeping Unit).
         db.setStock(sku, newQty);
     }
 }
