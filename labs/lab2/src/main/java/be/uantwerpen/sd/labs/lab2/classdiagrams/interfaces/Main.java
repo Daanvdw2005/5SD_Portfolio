@@ -20,7 +20,7 @@ public class Main {
 
         TV tv = new TV(10);
         Radio radio = new Radio(5);
-        CdPlayer cdPlayer = new CdPlayer(20);
+        CDPlayer cdPlayer = new CDPlayer(20);
 
         remote.addDevice(tv);
         remote.addDevice(radio);

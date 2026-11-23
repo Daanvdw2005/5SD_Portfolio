@@ -21,13 +21,13 @@ public class ViewApp extends Application {
             TODO: Create the model instance.
             TIP: Use the concrete DB implementation for this lab.
         */
-        Database model = null;
+        Database model = new RegistrationDB();
 
         /*
             TODO: Inject the model into the controller.
             TIP: Pass the model to the controller constructor.
         */
-        Controller controller = null;
+        Controller controller = new RegistrationController(model);
 
         RegistrationView view = new RegistrationView();
 
@@ -35,7 +35,7 @@ public class ViewApp extends Application {
             TODO: Wire the MVC triad: give the View its model + controller.
             TIP: The View should observe the model and call the controller.
         */
-        View viewLogic = null;
+        View viewLogic = new View(model, controller, view);
 
         view.attachLogic(viewLogic);
 

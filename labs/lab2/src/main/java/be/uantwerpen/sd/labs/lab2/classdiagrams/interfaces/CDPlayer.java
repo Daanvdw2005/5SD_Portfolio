@@ -9,14 +9,14 @@ Methods you will implement:
   - void volumeDown()
 TIP: Keep an internal volume (e.g., int) and print state changes in volumeUp()/volumeDown().
 */
-public class CdPlayer implements VolumeDevice{
+public class CDPlayer implements VolumeDevice{
     private int volume;
 
-    public CdPlayer(int initialVolume) {
+    public CDPlayer(int initialVolume) {
         this.volume = initialVolume;
     }
 
-    public CdPlayer() {
+    public CDPlayer() {
         this(15);
     }
 

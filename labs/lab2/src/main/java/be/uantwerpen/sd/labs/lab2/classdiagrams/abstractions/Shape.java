@@ -16,6 +16,9 @@ public abstract class Shape {
     protected String name;
 
     public Shape(double size, String name){
+        if (size <= 0) {
+            throw new IllegalArgumentException("Size must be greater than 0, got: " + size);
+        }
         this.name = name;
         this.size = size;
     }

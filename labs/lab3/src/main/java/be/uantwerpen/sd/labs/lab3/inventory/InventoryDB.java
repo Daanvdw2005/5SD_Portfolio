@@ -24,7 +24,7 @@ public class InventoryDB extends Database {
             TODO: Return the Singleton instance using double‑checked locking.
             TIP: Check null before and inside a synchronized block.
         */
-        if (INSTANCE == null) {
+        if (INSTANCE ==  null) {
             synchronized (InventoryDB.class) {
                 if (INSTANCE == null) {
                     INSTANCE = new InventoryDB();
@@ -39,8 +39,7 @@ public class InventoryDB extends Database {
             TODO: Set stock for a sku and notify observers.
             TIP: Read old value, put new value, then notify with event name 'stockChanged'.
         */
-        Integer previous = stock.put(sku, newQty);
-        int oldQty = (previous == null) ? 0 : previous;
+        Integer oldQty = stock.put(sku, newQty);
         notifyObservers("stockChanged", oldQty, newQty);
     }
 

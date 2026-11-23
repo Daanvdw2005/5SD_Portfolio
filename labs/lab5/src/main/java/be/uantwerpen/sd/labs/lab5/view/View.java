@@ -23,7 +23,11 @@ public final class View implements PropertyChangeListener {
             TODO: Implement the Constructor and register this View as a PropertyChangeListener on the model and refresh the UI.
             TIP: Assign all input variables to the class fields. Execute the addPropertyChangeListener of the model. Call refreshAll() at the end.
         */
-        throw new UnsupportedOperationException("TODO: Implement the Constructor and register this View as a PropertyChangeListener on the model and refresh the UI.");
+        this.controller = controller;
+        this.model = model;
+        this.ui = ui;
+        this.model.addPropertyChangeListener(this);
+        refreshAll();
     }
 
     public void onAddPerson(String name, String function) {
@@ -31,7 +35,13 @@ public final class View implements PropertyChangeListener {
             TODO: Implement the onAddPerson handler: call the controller to add the person and clear the UI on success; show an error on IllegalArgumentException.
             TIP: Everything should be in one big try/catch block. In the catch statement, use `ui.showError(ex.getMessage());`.
         */
-        throw new UnsupportedOperationException("TODO: Implement the onAddPerson handler: call the controller to add the person and clear the UI on success; show an error on IllegalArgumentException.");
+        try {
+            controller.addPerson(name,function);
+            ui.clearInputs();
+        }
+        catch (IllegalArgumentException ex) {
+            ui.showError(ex.getMessage());
+        }
     }
 
     public void onUpdatePerson(Employee updated) {
@@ -39,7 +49,13 @@ public final class View implements PropertyChangeListener {
             TODO: Implement the onUpdatePerson handler: call the controller to update the person; show an error on IllegalArgumentException.
             TIP: Everything should be in one big try/catch block. In the catch statement, use `ui.showError(ex.getMessage());`.
         */
-        throw new UnsupportedOperationException("TODO: Implement the onUpdatePerson handler: call the controller to update the person; show an error on IllegalArgumentException.");
+        try {
+            controller.updatePerson(updated);
+        }
+        catch (IllegalArgumentException ex){
+            ui.showError(ex.getMessage());
+        }
+
     }
 
     public void onDeleteSelected(Employee sel) {
@@ -47,7 +63,11 @@ public final class View implements PropertyChangeListener {
             TODO: Implement the onDeleteSelected handler: call the controller to delete the selected person.
             TIP: The selected employee should only be deleted if it is not null. There should NOT be a try/catch statement here, only one if statement.
         */
-        throw new UnsupportedOperationException("TODO: Implement the onDeleteSelected handler: call the controller to delete the selected person.");
+        if(sel != null){
+            controller.deletePerson(sel);
+        }
+
+
     }
 
     public void onAddEntry(Employee sel) {

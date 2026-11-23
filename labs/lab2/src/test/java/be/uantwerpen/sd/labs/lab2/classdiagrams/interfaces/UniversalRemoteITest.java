@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UniversalRemoteUTest {
+class UniversalRemoteITest {
 
     @Test
     void testRaiseVolumeAllDevices() {
@@ -25,15 +25,15 @@ class UniversalRemoteUTest {
     void testLowerVolumeAllDevices() {
         UniversalRemote remote = new UniversalRemote();
         TV tv = new TV(10);
-        CdPlayer cdPlayer = new CdPlayer(8);
+        CDPlayer cDPlayer = new CDPlayer(8);
 
         remote.addDevice(tv);
-        remote.addDevice(cdPlayer);
+        remote.addDevice(cDPlayer);
 
         remote.lowerVolume();
 
         assertEquals(9, tv.getVolume());
-        assertEquals(7, cdPlayer.getVolume());
+        assertEquals(7, cDPlayer.getVolume());
     }
 
     @Test

@@ -19,8 +19,8 @@ TIP: Pick an event name (e.g., 'bidPlaced') and send the Bid as payload.
 */
 public class Auction implements Subject {
     private Bid highest;
-//    mag ik ook een lijst gebruiken.
-    List<Observer> observers = new ArrayList<>();
+    private final Set<Observer> observers = ConcurrentHashMap.newKeySet();
+    //List<Observer> observers = new ArrayList<>();
     public static final String BID_PLACED = "bidPlaced";
 
 
@@ -57,7 +57,6 @@ public class Auction implements Subject {
             highest = bid;
             notifyObservers(BID_PLACED, bid);
         }
-        notifyObservers(BID_PLACED, bid);
     }
 
     public Bid highest() {

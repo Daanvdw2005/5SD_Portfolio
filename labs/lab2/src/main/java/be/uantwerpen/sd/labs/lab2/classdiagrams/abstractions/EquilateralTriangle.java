@@ -19,6 +19,6 @@ public class EquilateralTriangle extends Shape {
 
     @Override
     public double calcArea() {
-        return size * size / 2;
+        return (Math.sqrt(3) / 4.0) * Math.pow(size, 2);
     }
 }
